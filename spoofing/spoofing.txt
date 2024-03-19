@@ -1,1 +1,9 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+A malicious agent can copy the token and use it from an unauthenticated client. If the cookie
+is stolen through an attack, the agent will be able to take the session id and masquerade as the 
+user. The agent can also hide a secure server endpoint behind a malicious link, thus making the user
+hit the endpoint without them knowing. This is a CSRF attack. The secure version combats this by setting option
+flags on the cookie when creating the session. We set the httpOnly flag to true to prevent cookies from being read
+programmatically. Additionally, we set the same site flag to true, which means that the cookie and session will only be 
+sent when the client and server are on the same site. Spoofing violates confidentiality.

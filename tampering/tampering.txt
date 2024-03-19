@@ -1,0 +1,5 @@
+The input from the user is not being sanitized, so malicious code could be executed by the program. 
+When name is substituted in the html being sent to the client, the name could be a javascript or html snippet 
+that can executed instead of a string. This attack is cross-site scripting attack. The secure version 
+sanitizes the input, thus removing the possibility of the code snippet executing unexpectedly. It violates integrity 
+since we are altering input to perform unsanctioned actions.

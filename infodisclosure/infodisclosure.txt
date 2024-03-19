@@ -1,3 +1,8 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 Which CIA property does tampering violate?
 What additional security mechanisms can you incorporate?
+
+The system is vulnerable to NOSQL injection in our insecure.js file. The system does not sanitize
+the input from the user request to the "/userinfo" endpoint. The secure version prevents the vulnerability
+because it sanitizes the input username given from the user in the request. It violates confidentiality because
+the data can be accessed incorrectly through NOSQL injection.
