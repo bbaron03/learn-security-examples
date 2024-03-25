@@ -1,2 +1,9 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+The vulnerability is that the server uses the user input directly without sanitization. Therefore, 
+the user can submit an input that is invalid, which would in turn crash the server. Then,
+the user can spam this request as they wish in order to continue to keep the server down. The secure
+version wraps the request in a try catch statement, which prevents the program from crashing once receiving
+an illegal input. Another security mechanisms we should implement is to sanitize the user input before its use in a query.
+There should also be some rate limiting middleware that would prevent a dos attack from occuring

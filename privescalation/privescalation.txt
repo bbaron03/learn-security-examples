@@ -1,0 +1,4 @@
+The server does not check to see if the incoming request is actually coming from an authenticated user.
+Any client can hit the endpoint with a user id belonging to an admin and any role they would like to change
+and persist the change. The secure script requires the input to come from an authenticated user with a current
+session.

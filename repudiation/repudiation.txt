@@ -1,2 +1,9 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+The vulnerability in the insecure version comes from the fact that there are no logs being taken
+to check where each request comes from. Additionally, the inputs to the form could come from any user,
+which means that there is no way to tell what user actually submitted the form. The secure version
+logs each request coming in using middleware and logs the incoming ip address. This gives the server the 
+ability to determine who sent any given request. Duplicating the logs across several log files would be one example 
+of an additional security mechanism to incorporate.
